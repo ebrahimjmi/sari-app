@@ -1,0 +1,24 @@
+.footer {
+    padding: 40px 0;
+    background: $off-white-color;
+    color: $gray-color;
+    .menu {
+        width: 25%;
+        a {
+            padding-left: 0;
+        }
+        .menu-item {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &.animated-menu {
+                a {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

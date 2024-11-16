@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Nav = ({menu}) => {
-
+const Nav = ({menu, title}) => {
     return (
-        <nav className='flex'>
-            {menu?.map((item) => <li><Link key={item?.id} to={item?.url}>{item?.link}</Link></li>)}
+        <nav className='menu'>
+            <h3 className='heading-sm upper-case'>{title}</h3>
+            {menu?.map((item) => <div key={item?.id} className='menu-item animated-menu'><Link to={item?.url} className='capitalize'>{item?.link}</Link></div>)}
         </nav>
     )
 }

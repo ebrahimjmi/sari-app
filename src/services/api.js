@@ -20,3 +20,23 @@ export const fetchHeaderData = async (url) => {
         throw error;
     }
 };
+
+export const fetchHomePageData = async (url) => {
+    try {
+        const response = await apiClient.get(`${BASE_URL}/api/`+url);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching header data:', error);
+        throw error;
+    }
+};
+
+export const fetchFooterData = async (url) => {
+    try {
+        const response = await apiClient.get(`${BASE_URL}/api/`+url);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching header data:', error);
+        throw error;
+    }
+};
