@@ -1,0 +1,131 @@
+@mixin transform($value) {
+    -webkit-transform: $value;
+    transform: $value;
+}
+
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}
+
+//breakpoint
+@mixin mquery($size) {
+    @if $size ==xlarge {
+        @media only screen and (min-width: 1310px) {
+            @content;
+        }
+    }
+
+    @if $size ==wrap {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if $size ==large {
+        @media only screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $size ==tab {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $size ==medium {
+        @media only screen and (max-width: 1023px) {
+            @content;
+        }
+    }
+
+    @if $size ==mobile {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @if $size ==small {
+        @media only screen and (max-width: 480px) {
+            @content;
+        }
+    }
+
+    @if $size ==xsmall {
+        @media only screen and (max-width: 430px) {
+            @content;
+        }
+    }
+}
+
+@mixin flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin justify-content($value) {
+    -webkit-justify-content: $value;
+    -moz-justify-content: $value;
+    justify-content: $value;
+}
+
+@mixin align-items($value) {
+    -webkit-align-items: $value;
+    align-items: $value;
+}
+
+@mixin flex-direction($value) {
+    -webkit-flex-direction: $value;
+    -moz-flex-direction: $value;
+    flex-direction: $value;
+}
+
+@mixin align($position) {
+    position: absolute;
+    z-index: 2;
+    backface-visibility: hidden;
+
+    @if $position ==valign {
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+    }
+
+    @if $position ==halign {
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+    }
+
+    @if $position ==center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
