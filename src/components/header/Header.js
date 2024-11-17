@@ -3,6 +3,7 @@ import Nav from '../nav/Nav'
 import { fetchHeaderData } from '../../services/api';
 import Logo from '../logo/Logo';
 
+
 const Header = () => {
 
     const [headerData, setHeaderData] = useState(null);

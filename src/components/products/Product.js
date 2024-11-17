@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { fetchProductData } from '../../services/api';
 import { BASE_URL } from '../../constants/config';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../app/features/cart/cartSlice';
 
 const Product = () => {
 
+    const dispatch = useDispatch();
     const [productData, setProductData] = useState(null);
     const [error, setError] = useState(null);
 
@@ -28,6 +31,7 @@ const Product = () => {
                 product?.map((item, index) => {
                     return (
                         <div className="product" key={index}>
+
                             <div className="product-image">
                                 <img src={BASE_URL + item?.productImage?.url} alt="Product Name" />
                             </div>
@@ -56,7 +60,9 @@ const Product = () => {
 
                             </div>
                             <div className="product-actions">
-                                <button className="add-to-cart">Add to Cart</button>
+                                <button className="add-to-cart" onClick={() => {
+                                    dispatch(addItem(item))
+                                }}>Add to Cart</button>
                                 <button className="wishlist">♡ Wishlist</button>
                             </div>
                         </div>
