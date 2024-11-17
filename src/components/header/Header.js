@@ -7,6 +7,25 @@ const Header = () => {
 
     const [headerData, setHeaderData] = useState(null);
     const [error, setError] = useState(null);
+    const [isSticky, setIsSticky] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 75) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // console.log(lastScrollY)
 
 
     useEffect(() => {
@@ -26,7 +45,7 @@ const Header = () => {
     const menu = headerData?.data?.links;
 
     return (
-        <header className='header'>
+        <header className={`header ${isSticky ? `header-sticky` : ''}`}>
             <div className='container'>
                 <div className=' flex align-center space-between'>
                     <Logo logo={logo} />

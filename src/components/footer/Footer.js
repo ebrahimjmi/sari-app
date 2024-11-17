@@ -37,9 +37,9 @@ const Footer = () => {
           </p>
           <div className='flex mt-4'>
             {
-              menu?.map((item) => {
+              menu?.map((item, index) => {
                 return (
-                  <Nav menu={item.links} title={item?.title} />
+                  <Nav menu={item.links} title={item?.title} key={index} />
                 )
               })
             }

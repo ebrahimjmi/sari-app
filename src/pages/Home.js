@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import HomeBanner from '../components/banner/HomeBanner';
 import { fetchHomePageData } from '../services/api';
+import Product from '../components/products/Product';
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
     return (
         <div className='home-page'>
             <HomeBanner banner = {homeData?.data?.banner}/>
+            <Product />
         </div>
     )
 }

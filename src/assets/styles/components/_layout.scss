@@ -4,7 +4,7 @@
 
 img {
     max-width: 100%;
-    display: inline-block;
+    display: block;
 }
 
 a {
@@ -56,6 +56,40 @@ strong {
 // text center 
 .text-center {
     text-align: center;
+}
+
+// heigh and width 
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.h-25 {
+    height: 25%;
+}
+
+.object-fit-cover {
+    object-fit: cover;
 }
 
 // margins 
@@ -193,6 +227,7 @@ p {
 .animated-menu {
     a {
         position: relative;
+
         &:after {
             content: "";
             position: absolute;
@@ -201,6 +236,7 @@ p {
             height: 4px;
             transition: width 0.3s ease;
         }
+
         &:hover {
             &:after {
                 width: 100%;
@@ -208,4 +244,43 @@ p {
         }
     }
 
+}
+
+.site-btn, button {
+    outline: none;
+    border: 1px solid $pink-color;
+    color: $gray-color;
+    background: none;
+    padding: 10px;
+    min-width: 126px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.5s all;
+    &:hover {
+        color: $white-color;
+        background: $pink-color;
+    }
+
+}
+
+.slash-price {
+    text-decoration: line-through;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 700;
+    &.slash-price {
+        margin-right: 10px;
+    }
+}
+
+.offer {
+    color: $pink-color;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: 700;
 }

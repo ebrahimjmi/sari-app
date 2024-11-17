@@ -40,3 +40,13 @@ export const fetchFooterData = async (url) => {
         throw error;
     }
 };
+
+export const fetchProductData = async (url) => {
+    try {
+        const response = await apiClient.get(`${BASE_URL}/api/`+url);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching header data:', error);
+        throw error;
+    }
+};
